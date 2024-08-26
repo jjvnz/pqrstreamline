@@ -1,0 +1,40 @@
+# Archivos y directorios de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+
+# Entorno virtual
+venv/
+
+# Archivos de configuración
+*.env
+
+# Archivos de migraciones y base de datos de Alembic
+alembic/versions/
+alembic.ini
+
+# Archivos de Docker
+Dockerfile
+.dockerignore
+
+# Archivos de Pytest
+*.coverage
+*.log
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# Archivos generados por el editor
+.vscode/
+.idea/
+*.suo
+*.sw?
+*.sublime-project
+*.sublime-workspace
+
+# Archivos de prueba de codificación
+*.pytest_cache/
