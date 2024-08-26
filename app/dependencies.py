@@ -1,4 +1,9 @@
-from app.database import engine, Base, SessionLocal, get_db
+from sqlalchemy.orm import Session
+from app.database import SessionLocal
 
-# Crea las tablas
-Base.metadata.create_all(bind=engine)
+def get_db() -> Session:
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()

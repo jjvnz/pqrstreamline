@@ -8,7 +8,7 @@ PQRStreamline es una aplicación para gestionar solicitudes y usuarios con auten
 1. Crea un archivo `.env` con las variables necesarias.
 2. Instala las dependencias con `pip install -r requirements.txt`.
 3. Ejecuta las migraciones con `alembic upgrade head`.
-4. Corre el servidor con `uvicorn app.main:app --reload`.
+4. Corre el servidor con `uvicorn app.main:app --reload --port 8080`.
 
 ## Endpoints
 
