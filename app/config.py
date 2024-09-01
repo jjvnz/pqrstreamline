@@ -1,20 +1,23 @@
-from pydantic import BaseSettings
-
+from pydantic_settings import BaseSettings
+from pydantic import Field, EmailStr
 
 class Settings(BaseSettings):
-    DATABASE_URL: str
-    SECRET_KEY: str
-    ALGORITHM: str
-    ACCESS_TOKEN_EXPIRE_MINUTES: int
-    SMTP_SERVER: str
-    SMTP_PORT: int
-    SMTP_USER: str
-    SMTP_PASSWORD: str
-    FRONTEND_URL: str
+    database_url: str
+    secret_key: str
+    algorithm: str
+    smtp_server: str
+    smtp_port: int
+    smtp_user: EmailStr = Field(..., alias='SMTP_USER')
+    smtp_password: str = Field(..., alias='SMTP_PASSWORD')
+    access_token_expire_minutes: int
+    refresh_token_expire_days: int = 7  # Valor por defecto de 7 días
+    frontend_url: str
+    terms_url:str
+    base_url: str
+    privacy_url:str
 
     class Config:
         env_file = ".env"
+        case_sensitive = False
 
-
-# Crear una instancia de la configuración
 settings = Settings()
