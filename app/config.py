@@ -1,5 +1,5 @@
 from pydantic_settings import BaseSettings
-from pydantic import Field
+from pydantic import Field, EmailStr
 
 class Settings(BaseSettings):
     database_url: str
@@ -7,13 +7,17 @@ class Settings(BaseSettings):
     algorithm: str
     smtp_server: str
     smtp_port: int
-    smtp_user: str = Field(..., alias='SMTP_USER')
+    smtp_user: EmailStr = Field(..., alias='SMTP_USER')
     smtp_password: str = Field(..., alias='SMTP_PASSWORD')
     access_token_expire_minutes: int
+    refresh_token_expire_days: int = 7  # Valor por defecto de 7 días
     frontend_url: str
+    terms_url:str
+    base_url: str
+    privacy_url:str
 
     class Config:
         env_file = ".env"
-        case_sensitive = False  # Si deseas que la carga de variables sea insensible a mayúsculas/minúsculas
+        case_sensitive = False
 
 settings = Settings()

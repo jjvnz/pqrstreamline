@@ -38,11 +38,12 @@ pqrstreamline/
 │   ├── models.py  # Definición de modelos SQLAlchemy
 │   ├── schemas.py  # Esquemas Pydantic para validación
 │   ├── crud.py  # Funciones CRUD para la base de datos
-│   ├── dependencies.py  # Dependencias comunes de la API
 │   ├── database.py  # Configuración de la base de datos
 │   ├── config.py  # Configuraciones generales de la aplicación
 │   ├── utils.py  # Funciones utilitarias generales
 │   ├── main.py  # Punto de entrada de la aplicación FastAPI
+│   ├── templates/
+│   │   └── email_verification.html  # Plantilla HTML para el correo electrónico
 ├── tests/  # Directorio para pruebas unitarias e integración
 │   ├── __init__.py
 │   ├── test_users.py
