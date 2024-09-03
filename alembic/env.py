@@ -21,9 +21,6 @@ config.set_main_option("sqlalchemy.url", os.getenv("DATABASE_URL"))
 # Importa Base aquí
 from app.database import Base
 
-# Importa los modelos después de definir Base
-from app.models import Request
-
 target_metadata: DeclarativeMeta = Base.metadata
 
 def run_migrations_offline() -> None:

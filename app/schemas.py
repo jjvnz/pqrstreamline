@@ -1,12 +1,16 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, EmailStr
 
-class RequestCreate(BaseModel):
-    category: str
-    description: str
+class UserBase(BaseModel):
+    username: str
+    email: EmailStr
 
-class RequestResponse(RequestCreate):
+class UserCreate(UserBase):
+    password: str
+
+class UserInDB(UserBase):
     id: int
-    status: str
+    is_verified: bool
+    verification_token: str
 
     class Config:
         from_attributes = True
