@@ -8,7 +8,7 @@ PQRStreamline es una aplicación para gestionar solicitudes y usuarios con auten
 1. Crea un archivo `.env` con las variables necesarias.
 2. Instala las dependencias con `pip install -r requirements.txt`.
 3. Ejecuta las migraciones con `alembic upgrade head`.
-4. Corre el servidor con `uvicorn app.main:app --reload`.
+4. Corre el servidor con `uvicorn app.main:app --reload --port 8080`.
 
 ## Endpoints
 
@@ -27,7 +27,6 @@ pqrstreamline/
 │   │   ├── __init__.py
 │   │   ├── auth.py  # Endpoints de autenticación y autorización
 │   │   ├── users.py  # Endpoints relacionados con usuarios
-│   │   ├── requests.py  # Endpoints relacionados con solicitudes
 │   ├── auth/
 │   │   ├── __init__.py
 │   │   ├── jwt.py  # Lógica para JWT
@@ -38,7 +37,6 @@ pqrstreamline/
 │   ├── models.py  # Definición de modelos SQLAlchemy
 │   ├── schemas.py  # Esquemas Pydantic para validación
 │   ├── crud.py  # Funciones CRUD para la base de datos
-│   ├── dependencies.py  # Dependencias comunes de la API
 │   ├── database.py  # Configuración de la base de datos
 │   ├── config.py  # Configuraciones generales de la aplicación
 │   ├── utils.py  # Funciones utilitarias generales

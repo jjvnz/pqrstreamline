@@ -1,7 +1,10 @@
 from fastapi import FastAPI
-from app.api import requests
+from app.api import auth, users
+from app.database import engine, Base
 
 app = FastAPI()
 
-# Incluye los endpoints
-app.include_router(requests.router)
+app.include_router(auth.router, prefix="/auth", tags=["auth"])
+app.include_router(users.router, prefix="/users", tags=["users"])
+
+Base.metadata.create_all(bind=engine)
